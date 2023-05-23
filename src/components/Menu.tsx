@@ -15,7 +15,7 @@ const Menu = () => {
     return () => document.removeEventListener("mousedown", handleOutSideClick);
   }, []);
 
-  const handleOutSideClick = (e: MouseEvent) => {
+  const handleOutSideClick = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
       setIsOpen(false);
     }
