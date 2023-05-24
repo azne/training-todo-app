@@ -136,7 +136,8 @@ export const menuCheckIcon = style({
 export const todo = {
   wrapper: style({
     display: "flex",
-    marginBottom: "1em",
+    alignItems: "flex-start",
+    marginBottom: "1.25em",
   }),
   label: style({
     fontSize: "1rem",
@@ -158,8 +159,9 @@ export const todo = {
     display: "block",
     width: "100%",
     border: "none",
+    borderTop: "2px solid transparent",
     textAlign: "left",
-    lineHeight: 1.6,
+    lineHeight: 1.4,
     fontSize: "0.75rem",
     color: subColor,
   }),
@@ -183,7 +185,7 @@ export const todo = {
     border: "none",
     boxSizing: "border-box",
     backgroundColor: "transparent",
-    lineHeight: 1,
+    lineHeight: 1.4,
     fontSize: "0.75rem",
     color: subColor,
     ":focus": {

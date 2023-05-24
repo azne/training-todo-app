@@ -2,11 +2,14 @@ import React from 'react'
 
 import Todo from "./Todo";
 
-const TodoList = (todos: Todo) => {
+type TodoProps = {
+  todos: Todo[];
+}
+
+const TodoList = ({todos}: TodoProps) => {
   return(
     <>
-    {todos.todos.map((todo) => (
-      // <Todo todos={todos} />
+    {todos.map((todo) => (
       <Todo todo={todo} key={todo.id} />
     ))}
     </>
