@@ -9,17 +9,17 @@ const Menu = () => {
   const [isClicked, setIsClicked] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutSideClick);
-
-    return () => document.removeEventListener("mousedown", handleOutSideClick);
-  }, []);
-
   const handleOutSideClick = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {
     if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutSideClick);
+
+    return () => document.removeEventListener("mousedown", handleOutSideClick);
+  }, []);
 
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
